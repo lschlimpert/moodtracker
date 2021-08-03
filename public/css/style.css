@@ -1,0 +1,295 @@
+/* === Small CSS Reset === */
+*{
+  margin: 0;
+  padding: 0;
+}
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-width: 100%;
+  background: #1e202b;
+  color: lightblue;
+  font-family: sans-serif;
+}
+
+/* Header | Navbar */
+header {
+  display: flex;
+  width: 100%;
+  min-height: 15vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header nav ul {
+  display: flex;
+}
+header li {
+  padding: 1rem 2rem;
+  list-style: none;
+}
+header li a {
+  text-decoration: none;
+  color: azure;
+}
+
+/* Helper Classes */
+*.hidden {
+  display: none;
+}
+*.block {
+  display: block;
+}
+
+/* Main Content */
+main#main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  margin: 0 auto;
+}
+
+/* Mood Input Form */
+form {
+  margin: 2rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: flex-start;
+}
+form label {
+  color: #1e202b;
+  font-size: 14px;
+}
+form label.active {
+  color: #009ad8;
+}
+form input {
+  width: 100%;
+  padding: 20px 30px 20px 20px;
+  background: #323544;
+  border: 1px solid #323544;
+  color: white;
+  outline: none;
+}
+form input:focus, 
+form input:focus-within, 
+form input:active {
+  border: 1px solid #009ad8;
+}
+form input:focus::placeholder, 
+form input:focus-within::placeholder, 
+form input:active::placeholder {
+  color:#323544;
+}
+form button {
+  padding: 20px 40px;
+  background: #009ad8;
+  color: white;
+  outline: none;
+  border: 1px solid #009ad8;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+/* Video Section */
+video {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Main Section Weather */
+div.info-container {
+  width: 100%;
+  display: flex;
+  margin-top: 2rem;
+  position: relative;
+}
+
+/* Section Default Weather Information */
+div.weather_block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+  background: #323544;
+}
+
+/* Part Location */
+div.weather_block .locationDis {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #bfc1c8;
+}
+div.weather_block .locationDis span.location {
+  display: block;
+  white-space: nowrap;
+}
+div.weather_block .locationDis > svg.icon.small {
+  height: 14px;
+  width: 14px;
+  fill: none;
+  stroke: #bfc1c8;
+  stroke-width: 2;
+}
+
+/* Part Weather */
+div.weather_block .weatherDis {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+div.weather_block .weatherDis .tempContent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+}
+div.weather_block .weatherDis .tempContent > span.temp {
+  margin-right: 10px;
+  line-height: 1;
+}
+div.weather_block .weatherDis .tempContent > svg {
+  height: 35px;
+  width: 35px;
+  fill: none;
+  stroke: #009ad8;
+  stroke-width: 1;
+}
+div.weather_block .weatherDis p.summary {
+  font-size: 12px;
+  margin-left: 2px;
+  color: white;
+}
+
+/* Part AQI */
+div.aqi_block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 1rem 2rem 1.5rem;
+  background: #262936;
+}
+div.aqi_block div.aqiTitleDis {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 45px;
+  font-size: 12px;
+  color: #bfc1c8;
+}
+div.aqi_block div.aqiTitleDis span.aqiTitel {
+  font-size: 12px;
+  color: #bfc1c8;
+}
+div.aqi_block div.aqiTitleDis a.info_btn {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #009ad8;
+  height: 14px;
+  width: 14px;
+  padding: 0 .2rem;
+  background-color: #323544;
+  border-radius: 3px;
+}
+div.aqi_block div.aqiTitleDis a.info_btn:hover {
+  background-color: #414458;
+  transition: .3s ease-out;
+}
+div.aqi_block div.aqiTitleDis a.info_btn svg {
+  height: auto;
+  width: 100%;
+  fill: none;
+  stroke: #009ad8;
+  stroke-width: 2;
+}
+div.aqi_block div.aqiTitleDis a.info_btn.opend > svg {
+  height: 100%;
+  width: auto;
+  fill: none;
+  stroke: #009ad8;
+  stroke-width: 2;
+  transform: rotate(90deg);
+  transition: .2s ease-in;
+}
+div.aqi_block .aqiDis {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+}
+div.aqi_block .aqiDis > span.aqi {
+  margin-right: 10px;
+  line-height: 1;
+}
+div.aqi_block .aqiDis > svg {
+  height: 35px;
+  width: 35px;
+  fill: none;
+  stroke: #009ad8;
+  stroke-width: 1;
+}
+
+/* AQI Declaration */
+div#additional_aqi_block {
+  height: 20rem;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #5d6175;
+  z-index: 10;
+}
+div#additional_aqi_block::before {
+  content: '';
+  height: 25px;
+  width: 25px;
+  display: block;
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background: #5d6175;
+  z-index: 30;
+  transform: rotate(45deg);
+}
+
+/* Main Content */
+main#tracker-container {
+  width: 1000px;
+  margin: 0 auto;
+}
+section.mood-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+section.mood-container div.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(50% - .5rem);
+}

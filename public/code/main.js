@@ -3,7 +3,7 @@ function setup () {
   // Remove canvas
   noCanvas();
   // Capture video from webcam
-  const video = createCapture();
+  const video = createCapture(VIDEO);
   video.parent('main-container');
   video.size(320, 240);
 

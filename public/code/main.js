@@ -10,7 +10,7 @@ function setup () {
 
   // Geo-locate
   // console.log(navigator);
-  let lat, lon, city, temp, descr, aqi;
+  let lat, lon, city, temp, descr, aqi, aqClass, aqText, aqIcon;
   if ( 'geolocation' in navigator ) {
     navigator.geolocation.getCurrentPosition( async position => {
 
@@ -31,6 +31,13 @@ function setup () {
         temp = json.weather.main.temp;
         descr = json.weather.weather[0].description;
         aqi = json.airquality.data.aqi;
+
+        if (aqi < 51) {aqText = 'Good'; aqClass = 'good'; aqIcon = '128525'}
+        else if(aqi > 50 && aqi < 101) {aqText = 'Moderate'; aqClass = 'moderate'; aqIcon = '128522'}
+        else if(aqi > 100 && aqi < 151) {aqText = 'Unhealthy for sensitive groups'; aqClass = 'unhealthy-groups'; aqIcon = '128528'}
+        else if(aqi > 150 && aqi < 201) {aqText = 'Unhealthy'; aqClass = 'unhealthy'; aqIcon = '128534'}
+        else if(aqi > 200 && aqi < 301) {aqText = 'Very Unhealthy'; aqClass = 'unhealthy-very'; aqIcon = '128565'}
+        else if(aqi > 300) {aqText = 'Hazardous'; aqClass = 'hazardous'; aqIcon = '129327'}
 
         const template = `
         <div class="weather_block">
@@ -59,7 +66,12 @@ function setup () {
           </div>
         </div>
 
-        <div id="additional_aqi_block" class="hidden"></div>`;
+        <div id="additional_aqi_block" class="hidden">
+          <div>
+            <p class="aqi-result-text">Ihre Luftqualität vor Ort gilt als:</p>
+            <span class="aqi-result">${aqText} &#${aqIcon};</span>
+          </div>
+        </div>`;
 
         const weatherDiv = document.createElement('div');
         weatherDiv.innerHTML = template;

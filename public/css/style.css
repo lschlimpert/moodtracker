@@ -253,8 +253,9 @@ div.aqi_block .aqiDis > svg {
 
 /* AQI Declaration */
 div#additional_aqi_block {
-  height: 20rem;
+  height: auto;
   width: 100%;
+  padding: 1.5rem;
   position: absolute;
   top: 100%;
   left: 0;
@@ -272,6 +273,17 @@ div#additional_aqi_block::before {
   background: #5d6175;
   z-index: 30;
   transform: rotate(45deg);
+}
+div#additional_aqi_block p {
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: white;
+
+}
+div#additional_aqi_block span {
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
 }
 
 /* Main Content */

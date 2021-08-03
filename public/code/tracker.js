@@ -20,7 +20,7 @@ async function fetchData () {
       else if(item.aqi > 200 && item.aqi < 301) {aqText = 'Very Unhealthy'; aqClass = 'unhealthy-very';}
       else if(item.aqi > 300) {aqText = 'Hazardous'; aqClass = 'hazardous';}
 
-      console.log(aqText, aqClass);
+      //console.log(aqText, aqClass);
 
       // Create container
       const container = document.createElement('div');

@@ -129,6 +129,33 @@ function setup () {
       const json = await response.json();
 
       console.log(json);
+      
+      // Input feedback
+      if (json.success) {
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.innerHTML = 'Ihre Eingabe ist gespeichert und unter <a href="tracker/index.html">Tracker</a> zu finden!';
+        feedbackDiv.classList.add('feedback');
+        feedbackDiv.classList.add('success');
+        document.querySelectorAll('div.feedback').forEach(e => {e.remove()});;
+        document.querySelector('form').prepend(feedbackDiv);
+        let allFeedbacks = document.querySelectorAll('div.feedback');
+        for (let e of allFeedbacks) {
+          setTimeout(function() {e.remove();}, 5000);
+        }
+      } else {
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.innerHTML = 'Es gab ein Fehler! Bitte erneut versuchen';
+        feedbackDiv.classList.add('feedback');
+        feedbackDiv.classList.add('hasError');
+        document.querySelectorAll('div.feedback').forEach(e => {e.remove()});
+        document.querySelector('form').prepend(feedbackDiv);
+        let allFeedbacks = document.querySelectorAll('div.feedback');
+        for (let e of allFeedbacks) {
+          setTimeout(() => { e.remove();}, 5000);
+        }
+      }
+
+
     } 
     catch (error) {
       console.error(error);

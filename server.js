@@ -1,6 +1,7 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const Datastore = require('nedb');
+const { json } = require('express');
 require('dotenv').config();
 
 const app = express();
@@ -29,6 +30,7 @@ app.post('/api', (req, res) => {
   const timestamp = Date.now();
   data.timestamp = timestamp;
 
+  data.success = true;
   database.insert(data);
   res.json(data);
 })

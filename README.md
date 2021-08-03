@@ -37,7 +37,7 @@ We use [GIT](https://git-scm.com/) for versioning.
 
 ## Authors ✏️
 
-* [**Martin Hutchings**](https://github.com/stribis)
+* [**LSC**](https://github.com/lschlimpert)
 * Based on a [project](https://github.com/CodingTrain/Intro-to-Data-APIs-JS) by [Coding Train's](https://thecodingtrain.com/) [Daniel Shiffman](https://shiffman.net/)
 
 

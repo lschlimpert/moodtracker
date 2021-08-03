@@ -87,3 +87,23 @@ app.get('/weather/:latlon', async (req, res) => {
   }
   res.json(data)
 })
+
+// Delete data
+app.get('/api/delete/:id', (req, res) => {
+  const id = req.params.id;
+
+  database.remove({_id:id}, {}, (err, data) => {
+    if (err) {
+      console.error(err)
+      res.end()
+    };
+  })
+
+  // Response
+  const data = {
+    success: true,
+    id: id
+  }
+  
+  res.json(data)
+})

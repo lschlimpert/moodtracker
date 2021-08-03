@@ -317,9 +317,127 @@ section.mood-container {
   gap: 1rem;
 }
 section.mood-container div.item {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: calc(50% - .5rem);
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* width: calc(50% - .5rem); */
+  width: 320px;
+}
+section.mood-container div.item div.counter,
+section.mood-container div.item div.delete {
+  position: absolute;
+  height: 40px;
+  min-width: 40px;
+}
+section.mood-container div.item div.counter {
+  background: #009ad8;
+  top: 0;
+  left: 0;
+}
+section.mood-container div.item div.delete {
+  background: #323544;
+  top: calc(240px - 40px);
+  right: 0;
+  cursor: pointer;
+}
+section.mood-container div.item div.counter span {
+  display: block;
+  line-height: 1;
+  width: 100%;
+  margin-top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+section.mood-container div.item div.delete span {
+  display: block;
+  line-height: 1;
+  width: 100%;
+  margin-top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+section.mood-container div.item div.item-header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem .75rem;
+  background: #262936;
+}
+section.mood-container div.item div.item-header span.mood {
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #009ad8;
+}
+section.mood-container div.item div.item-header span.date {
+  width: 100%;
+  font-size: 14px;
+  color: white;
+}
+section.mood-container div.item div.item-body {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 .75rem;
+  background: #323544;
+}
+section.mood-container div.item div.item-body > div.location,
+section.mood-container div.item div.item-body > div.weather,
+section.mood-container div.item div.item-body > div.aqi-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  position: relative;
+}
+section.mood-container div.item div.item-body > div + div {
+  border-top: 1px solid #696e88;
+}
+section.mood-container div.item div.item-body > div.location span.desc,
+section.mood-container div.item div.item-body > div.weather span.desc,
+section.mood-container div.item div.item-body > div.aqi-container span.desc {
+  width: calc(100% - 30px);
+  font-size: 14px;
+  color: white;
+}
+section.mood-container div.item div.item-body > div.location span.text,
+section.mood-container div.item div.item-body > div.weather span.text,
+section.mood-container div.item div.item-body > div.aqi-container span.text {
+  width: calc(100% - 30px);
+  margin-top: 5px;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+section.mood-container div.item div.item-body > div.location span.icon,
+section.mood-container div.item div.item-body > div.weather span.icon,
+section.mood-container div.item div.item-body > div.aqi-container span.icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+main#tracker-container div.feedback {
+  width: 100%;
+  padding: 1rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+main#tracker-container div.feedback.success, main#tracker-container div.feedback.success a {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  text-decoration: none;
+}
+main#tracker-container div.feedback.hasError, main#tracker-container div.feedback.hasError a {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  text-decoration: none;
 }
